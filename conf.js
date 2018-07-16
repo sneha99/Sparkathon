@@ -3,12 +3,14 @@ exports.config = {
   specs: ['spec.js'],
   onPrepare: function () {
         var VideoReporter = require('protractor-video-reporter'); 
+        var Path = require('path')
         jasmine.getEnv().addReporter(new VideoReporter({
-            baseDirectory: 'C:\\Users\\ajhanwar\\Desktop\\Sparkathon\\videos', 
+            baseDirectory: Path.join(__dirname, 'reports/videos/'),
             saveSuccessVideos: true,
 			createSubtitles: true,
 			singleVideo : false,
-            ffmpegCmd: "C:\\FFmpeg\\bin\\ffmpeg.exe",
+            ffmpegCmd: "C:\\ffmpeg\\bin\\ffmpeg.exe",
+            singleVideoPath : 'fullName',
             ffmpegArgs: [
 			  '-y',
 			  '-f', 'gdigrab',
