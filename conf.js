@@ -11,7 +11,13 @@ exports.config = {
 	    singleVideo : false,
 	    singleVideoPath : 'fullName',
 	    ffmpegArgs: [
-		'-vcodec', 'libx264',
+		'-y',
+		    '-r', '30',
+		    '-f', 'x11grab',
+		    '-s', '1280x3000',
+		    '-i', '54.202.235.58',
+		    '-g', '300',
+		    '-vcodec', 'qtrle'
 	    ]
         }));
 }
