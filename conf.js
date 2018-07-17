@@ -7,9 +7,12 @@ exports.config = {
         jasmine.getEnv().addReporter(new VideoReporter({
             baseDirectory: Path.join(__dirname, 'reports/videos/'),
             saveSuccessVideos: true,
-			createSubtitles: true,
-			singleVideo : false,
-            singleVideoPath : 'fullName'
+	    createSubtitles: true,
+	    singleVideo : false,
+	    singleVideoPath : 'fullName',
+	    ffmpegArgs: [
+		'-vcodec', 'libx264',
+	    ]
         }));
 }
 };
